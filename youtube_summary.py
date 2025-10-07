@@ -22,6 +22,9 @@ import tiktoken
 import sys
 import json
 
+# my libraries
+from handle_notion import *
+
 MAP_TEMPLATE_TXT = """Write a detail summary of this text section in bullet points.
 Text:
 {text}
@@ -153,11 +156,12 @@ def get_transcription_summary(url: str, temperature: float, chunk_size: int, ove
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python you_get_text.py <Youtube URL>")
-        sys.exit(1)
+    #if len(sys.argv) < 2:
+    #    print("Usage: python you_get_text.py <Youtube URL>")
+    #    sys.exit(1)
 
-    url = sys.argv[1]
+    #url = sys.argv[1]
+	url = get_first_unused_url()
     title, description = get_youtube_info(url)
     # full_transcript, count = get_youtube_transcript(url) 
 
