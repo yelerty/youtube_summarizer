@@ -49,10 +49,10 @@ def getUrlFromNotionDB():
 
 
 def get_first_unused_url():
-	df = getUrlFromNotionDB()
-	# Filter rows where 'used' column value is False
+    df = getUrlFromNotionDB()
+    # Filter rows where 'used' column value is False
     filtered_rows = df[df['used'] == False]
-    
+
     # Return the first URL from the filtered rows
     return filtered_rows.iloc[0]['URL']
 

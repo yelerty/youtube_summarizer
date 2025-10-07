@@ -110,7 +110,6 @@ def get_youtube_transcript(url):
 def get_llm(model: str, base_url: str, temperature: float):
     llm = Ollama(
         model=model,
-        base_url=base_url,
         temperature=temperature,
     )
     return llm
@@ -161,7 +160,7 @@ if __name__ == "__main__":
     #    sys.exit(1)
 
     #url = sys.argv[1]
-	url = get_first_unused_url()
+    url = get_first_unused_url()
     title, description = get_youtube_info(url)
     # full_transcript, count = get_youtube_transcript(url) 
 
